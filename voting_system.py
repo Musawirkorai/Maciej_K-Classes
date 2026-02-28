@@ -22,6 +22,14 @@ def show_candidates(candidates):
 
 def cast_vote(candidates):
    voter_name = input("Enter Your Name:")
+   gender = input("Enter Your Gender (M/F): ").lower()
+
+   if gender == "f":
+      title = "Ms"
+   elif gender == "m":
+      title = "Mr"
+   else:
+      title = ""
 
    show_candidates(candidates)
 
@@ -29,7 +37,7 @@ def cast_vote(candidates):
 
    if choice in candidates:
       candidates[choice]["votes"] += 1
-      print(f"Thank you for vote Mr {voter_name}")
+      print(f"Thank you for vote {title} {voter_name}")
    else:
       print("Invalid Candidate Number ")
 
